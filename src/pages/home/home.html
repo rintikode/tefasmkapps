@@ -1,0 +1,57 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Welcome to STEMANIKA Project</h2>
+  <button ion-button color="primary" (click)="logout()">Logout</button>
+</ion-content> -->
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>STEMANIKA</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="firstTime">
+    <ion-slides pager>
+      <ion-slide *ngFor="let slide of slides">
+        <!-- <ion-toolbar>
+          
+        </ion-toolbar> -->
+        <ion-buttons end>
+          <button ion-button color="primary" (click)="skip()">Skip</button>
+        </ion-buttons>
+        <img [src]="slide.image" class="slide-image"/>
+        <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+        <p [innerHTML]="slide.description"></p>
+      </ion-slide>
+      <ion-slide>
+        
+        <img src="assets/imgs/logo.png" class="slide-image"/>
+        <h2 class="slide-title">Ready to get in touch?</h2>
+        <button ion-button large clear icon-end color="primary">
+          Continue
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <div *ngIf="!firstTime">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6 text-center *ngFor="let item of shortcuts" [ngStyle]="{'background-color': item.color}" tappable (click)="shortcut_item(item.page)">
+              <ion-icon name="{{ item.icon }}" color="light"></ion-icon>
+              <p class="icon-text">{{ item.title }}</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <button ion-button color="primary" (click)="logout()">Logout</button>
+  </div>
+
+</ion-content>

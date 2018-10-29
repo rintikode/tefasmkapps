@@ -1,0 +1,54 @@
+<!-- -->
+<ion-content padding class="animated fadeIn login auth-page" padding id="login">
+  <div class="login-content">
+
+    <!-- Logo -->
+    <ion-grid>
+      <ion-row>
+        <ion-col text-center class="marginTop">
+          <h1>
+            STEMANIKA
+          </h1>
+          <h2>
+            <strong>Login</strong>
+          </h2>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+    <!-- Login form -->
+    <form class="list-form">
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="mail" item-start class="text-primary"></ion-icon>
+          Email
+        </ion-label>
+        <ion-input type="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="lock" item-start class="text-primary"></ion-icon>
+          Password
+        </ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+    </form>
+
+    <p text-right ion-text color="secondary" tappable (click)="forgotPass()"><strong>Forgot Password?</strong></p>
+
+    <div>
+      <button ion-button icon-start block color="primary" tappable (click)="login()">
+        <ion-icon name="log-in"></ion-icon>
+        SIGN IN
+      </button>
+
+    </div>
+
+    <!-- Other links -->
+    <div text-center margin-top>
+      <span ion-text color="secondary" tappable (click)="signup()">New here? <strong>Sign up</strong></span>
+    </div>
+
+  </div>
+</ion-content>
